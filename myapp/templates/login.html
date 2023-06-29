@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login page</title>
+</head>
+<body>
+    {% if messages %}
+    {% for msg in messages %}
+    <p>{{ msg }}</p>
+    {% endfor %}
+    {% endif %}
+<form method="post">
+    {% csrf_token %}
+    username :<input type="name" name="uname"><br>
+    password :<input type="password" name="password"><br>
+    <input type="submit" value="login now"><br>
+    <a href="{% url 'register' %}"> create a account</a>
+</form>
+
+</body>
+</html>

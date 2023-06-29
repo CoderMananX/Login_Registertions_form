@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>data page</title>
+</head>
+<body>
+
+<table border="2px" width="500px">
+
+    <tr>
+        <th>name</th>
+        <th>email</th>
+        <th>password</th>
+        <th></th>
+    </tr>
+    {% for i in all %}
+    <tr>
+        <td>{{i.name}}</td>
+        <td>{{i.email}}</td>
+        <td>{{i.password}}</td>
+        <td>
+            <a href="delete_data/{{id}}" class="btn btn-danger md-sm">delete</a>
+            <a href="update_data/{{id}}" class="btn btn-danger md-sm">update</a>
+
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>

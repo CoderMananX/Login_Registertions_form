@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>register page</title>
+</head>
+<body>
+    {% if messages %}
+    {% for msg in messages %}
+    <p>{{ msg }}</p>
+    {% endfor %}
+    {% endif %}
+<form method="post">
+
+    {% csrf_token %}
+    username : <input type="text" name="username"><br>
+    email : <input type="email" name="useremail"><br>
+    password : <input type="password" name="userpassword"><br>
+    confrom password : <input type="password" name="userpassword2"><br>
+    <input type="submit" value="signup" ><br>
+    <a href="{% url 'login' %}"> i have already account </a><br>
+    <a href="{% url 'data' %}"> show data</a>
+</form>
+
+</body>
+</html>
